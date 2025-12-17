@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+    font-family: "Poppins", "sans-serif";
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+    --color-primary: #ad46ff;
+    --color-secondary: #121212;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-main: #1f1f1f;
+    --color-accent: #55595f;
+    --color-from: #242424;
+    --color-to: #2d2d2d;
+    --color-2: #cfcece;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light-mode {
+    --color-secondary: #ffffff;
+    --color-white: #000000;
+    --color-black: #ffffff;
+    --color-main: #f5f5f5;
+    --color-accent: #d1d1d1;
+    --color-from: #e6e6e6;
+    --color-to: #e0e0e0;
+    --color-2: #616060;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::-webkit-scrollbar {
+  width: 8px;
+  /* thin */
+  background-color: var(--secondary-color);
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  /* slate-500 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent)/70;
+}
+
+
+button{
+    @apply cursor-pointer
+}
+
+button.primary {
+    @apply flex items-center gap-2 py-2 px-4 rounded-md bg-primary border border-transparent text-white cursor-pointer font-medium transition-all duration-300 ease-in-out;
+}
+
+button.primary:hover {
+    @apply bg-primary/70 -translate-y-[1px];
 }
