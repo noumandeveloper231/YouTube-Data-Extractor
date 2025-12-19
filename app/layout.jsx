@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           {children}
-          {/* <FeedbackWidget /> */}
+          <FeedbackWidget />
           <Toaster richColors/>
           <Analytics/>
         </ThemeProvider>

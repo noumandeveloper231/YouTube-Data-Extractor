@@ -8,9 +8,9 @@ const Navbar = () => {
             <div className='px-3'>
                 <ThemeLogo />
             </div>
-            {/* <div className="order-2 md:order-0 mt-4 md:mt-0 text-center text-xl text-white bg-yellow-500/20 px-4 py-1 rounded-md border border-yellow-500/50">
+            <div className="order-2 md:order-0 mt-4 md:mt-0 text-center text-xl text-white bg-yellow-500/20 px-4 py-1 rounded-md border border-yellow-500/50">
                 🧪 Public testing — feedback welcome
-            </div> */}
+            </div>
             <div className='px-3 justify-center flex items-center gap-2'>
                 <ThemeToggle />
             </div>
