@@ -216,15 +216,15 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-from to-to">
+      <div className="min-h-screen bg-linear-to-br from-from to-to">
         <Navbar />
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-4">
                 <YoutubeIcon className='text-red-500 ' size={50} />
-                <h1 className="text-4xl font-bold text-primary">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
                   YouTube Metadata Extractor
                 </h1>
               </div>
@@ -264,7 +264,7 @@ export default function Home() {
                     ) : null}
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm text-2">
+                <div className="flex flex-col md:flex-row items-center justify-between text-sm text-2">
                   <span>
                     {loading ? '🔄 Extracting metadata...' :
                       videoUrl && isValidUrl ? '✅ Valid YouTube URL - extracting in 0.3s' :
@@ -305,12 +305,11 @@ export default function Home() {
               <div className="space-y-6">
                 {/* Video Info Card */}
                 <div className="bg-main rounded-xl shadow-lg overflow-hidden">
-                  <div className="md:flex">
+                  <div className="flex flex-col md:flex-row">
                     <div className="md:w-1/3 relative group">
-                      <Image
+                      <img
                         src={metadata.thumbnails.high || metadata.thumbnails.medium}
                         alt={metadata.title}
-                        fill
                         className="w-full h-48 md:h-full object-cover"
                       />
                       <div className="absolute inset-0 backdrop-blur-[10px] bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
@@ -330,7 +329,7 @@ export default function Home() {
                       <h2 className="text-2xl font-bold text-white mb-3">
                         {metadata.title}
                       </h2>
-                      <div className="flex items-center gap-4 text-sm text-2 mb-4">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-2 mb-4">
                         <div className="flex items-center gap-1">
                             <User className="w-4 h-4" />
                             {metadata.channelTitle}
@@ -349,7 +348,7 @@ export default function Home() {
                           {formatDuration(metadata.duration)}
                         </div>
                       </div>
-                      <div className="flex items-center gap-6 text-sm">
+                      <div className="flex flex-wrap items-center gap-6 text-sm">
                         <div className="flex items-center gap-1 text-2">
                           <Eye className="w-4 h-4" />
                           {formatNumber(metadata.statistics.viewCount)} views
@@ -422,7 +421,7 @@ export default function Home() {
                       <User className="w-5 h-5" />
                       Channel Information
                     </h3>
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-start gap-4">
                       <img
                         src={metadata.channel.thumbnails.high || metadata.channel.thumbnails.medium}
                         alt={metadata.channel.title}
@@ -458,7 +457,7 @@ export default function Home() {
                             {metadata.channel.description.length > 200 && '...'}
                           </div>
                         )}
-                        <div className="mt-3 flex items-center gap-4 text-xs text-2">
+                        <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-2">
                           <span>Joined: {new Date(metadata.channel.publishedAt).toLocaleDateString()}</span>
                           {metadata.channel.country && <span>Country: {metadata.channel.country}</span>}
                           {metadata.channel.customUrl && (

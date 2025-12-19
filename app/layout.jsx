@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "./context/ThemeContext";
+import FeedbackWidget from "./components/FeedbackWidget";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           {children}
+          <FeedbackWidget />
           <Toaster richColors/>
         </ThemeProvider>
       </body>
