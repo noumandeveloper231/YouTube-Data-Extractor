@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "./context/ThemeContext";
 import FeedbackWidget from "./components/FeedbackWidget";
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,8 +22,9 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} antialiased`}>
         <ThemeProvider>
           {children}
-          <FeedbackWidget />
+          {/* <FeedbackWidget /> */}
           <Toaster richColors/>
+          <Analytics/>
         </ThemeProvider>
       </body>
     </html>
